@@ -63,63 +63,69 @@ Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặ
 </audio>
  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
  <script>
-function openGift(){
- // 🎆 Pháo hoa liên tục
+function openGift() {
 
-setInterval(() => {
+  document.getElementById("gift").style.display = "block";
 
+  document.getElementById("bgm").play();
+
+  // Pháo hoa lần đầu
   confetti({
-
-    particleCount: 20,
-
+    particleCount: 180,
     spread: 120,
-
-    origin: {
-
-      x: Math.random(),
-
-      y: Math.random() * 0.6
-
-    }
-
+    origin: { y: 0.6 }
   });
 
-}, 400);
+  // Pháo hoa liên tục
+  setInterval(() => {
+    confetti({
+      particleCount: 20,
+      spread: 120,
+      origin: {
+        x: Math.random(),
+        y: Math.random() * 0.6
+      }
+    });
+  }, 400);
 
- });
+  // Đếm tiền
+  let v = 0;
+  let target = 500000;
 
- let v=0,target=500000;
+  let t = setInterval(() => {
+    v += 5000;
 
- ...
+    if (v >= target) {
+      v = target;
+      clearInterval(t);
+    }
 
- ...
+    document.getElementById("money").innerText =
+      v.toLocaleString("vi-VN") + "đ";
 
-}
- document.getElementById('gift').style.display='block';
- document.getElementById("bgm").play();
- confetti({
-  particleCount:180,
-  spread:120,
-  origin:{ y:0.6 }
-});
- let v=0,target=500000;
- let t=setInterval(()=>{
-   v+=5000;
-   if(v>=target){v=target;clearInterval(t);}
-   document.getElementById('money').innerText=v.toLocaleString('vi-VN')+"đ";
- },15);
- for(let i=0;i<80;i++){
-   setTimeout(()=>{
-      let h=document.createElement('div');
-      h.className='heart';
-      h.textContent=Math.random()>0.5?'💖':'🎉';
-      h.style.left=Math.random()*100+'vw';
-      h.style.fontSize=(18+Math.random()*20)+'px';
+  }, 15);
+
+  // Tim bay
+  for (let i = 0; i < 80; i++) {
+
+    setTimeout(() => {
+
+      let h = document.createElement("div");
+
+      h.className = "heart";
+
+      h.textContent = Math.random() > 0.5 ? "💖" : "🎉";
+
+      h.style.left = Math.random() * 100 + "vw";
+
+      h.style.fontSize = (18 + Math.random() * 20) + "px";
+
       document.body.appendChild(h);
-      setTimeout(()=>h.remove(),5000);
-   },i*40);
- }
+
+      setTimeout(() => h.remove(), 5000);
+
+    }, i * 40);
+
+  }
+
 }
-</script>
-</body>
-</html>
