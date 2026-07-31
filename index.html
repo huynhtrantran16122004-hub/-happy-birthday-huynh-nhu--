@@ -65,6 +65,27 @@ Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặ
  <script>
 function openGift(){
  document.getElementById('gift').style.display='block';
+
+ document.getElementById("bgm").play();
+
+ confetti({
+
+  particleCount:180,
+
+  spread:120,
+
+  origin:{ y:0.6 }
+
+ });
+
+ let v=0,target=500000;
+
+ ...
+
+ ...
+
+}
+ document.getElementById('gift').style.display='block';
  document.getElementById("bgm").play();
  confetti({
   particleCount:180,
