@@ -64,17 +64,27 @@ Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặ
  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
  <script>
 function openGift(){
- document.getElementById('gift').style.display='block';
+ // 🎆 Pháo hoa liên tục
 
- document.getElementById("bgm").play();
+setInterval(() => {
 
- confetti({
+  confetti({
 
-  particleCount:180,
+    particleCount: 20,
 
-  spread:120,
+    spread: 120,
 
-  origin:{ y:0.6 }
+    origin: {
+
+      x: Math.random(),
+
+      y: Math.random() * 0.6
+
+    }
+
+  });
+
+}, 400);
 
  });
 
