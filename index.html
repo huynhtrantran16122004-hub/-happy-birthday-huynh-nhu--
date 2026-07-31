@@ -23,6 +23,25 @@ button{background:#ff4f93;color:#fff;border:none;padding:15px 32px;border-radius
 <div class="card">
 <h1>🎂 Happy Birthday</h1>
 <h2>Huỳnh Như 💖</h2>
+ <img src="avatar.jpg"
+
+style="
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid #ff69b4;
+
+box-shadow:0 0 25px pink;
+
+margin:20px auto;
+
+display:block;">
 <p>💝 Chúc em gái của Trân Trân thêm một tuổi mới thật nhiều niềm vui, luôn luôn hạnh phúc, mạnh khỏe và đạt được mọi điều mình mong muốn nhé.<br><br>
 Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặp nhiều may mắn và có thật nhiều kỷ niệm đẹp. 🎉</p>
 
@@ -37,9 +56,21 @@ Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặ
 </div>
 </div>
 
-<script>
+<audio id="bgm" loop>
+
+    <source src="music.mp3" type="audio/mpeg">
+
+</audio>
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+ <script>
 function openGift(){
  document.getElementById('gift').style.display='block';
+ document.getElementById("bgm").play();
+ confetti({
+  particleCount:180,
+  spread:120,
+  origin:{ y:0.6 }
+});
  let v=0,target=500000;
  let t=setInterval(()=>{
    v+=5000;
