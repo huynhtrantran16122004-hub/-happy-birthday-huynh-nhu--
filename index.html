@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Huỳnh Như</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6ea,#fff0f7);overflow:hidden}
+.container{display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px}
+.card{max-width:700px;background:#fff;border-radius:24px;padding:30px;text-align:center;box-shadow:0 10px 35px rgba(0,0,0,.15)}
+h1{color:#ff4f93;margin:0}
+h2{color:#ff77aa}
+p{font-size:18px;line-height:1.7;color:#555}
+button{background:#ff4f93;color:#fff;border:none;padding:15px 32px;border-radius:40px;font-size:20px;cursor:pointer}
+#gift{display:none;margin-top:20px}
+.money{font-size:48px;color:#e91e63;font-weight:bold}
+.heart{position:fixed;font-size:22px;animation:fly 5s linear forwards}
+@keyframes fly{from{transform:translateY(100vh)}to{transform:translateY(-10vh);opacity:0}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>🎂 Happy Birthday</h1>
+<h2>Huỳnh Như 💖</h2>
+<p>💝 Chúc em gái của Trân Trân thêm một tuổi mới thật nhiều niềm vui, luôn luôn hạnh phúc, mạnh khỏe và đạt được mọi điều mình mong muốn nhé.<br><br>
+Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặp nhiều may mắn và có thật nhiều kỷ niệm đẹp. 🎉</p>
+
+<button onclick="openGift()">🎁 MỞ QUÀ</button>
+
+<div id="gift">
+<h2>🎂 Tui có chút tiền tặng sinh nhật nhoa 🎂🎂</h2>
+<div class="money" id="money">0đ</div>
+<p><b>500.000đ 💝</b></p>
+<p>From: Trân Trân ❤️</p>
+</div>
+</div>
+</div>
+
+<script>
+function openGift(){
+ document.getElementById('gift').style.display='block';
+ let v=0,target=500000;
+ let t=setInterval(()=>{
+   v+=5000;
+   if(v>=target){v=target;clearInterval(t);}
+   document.getElementById('money').innerText=v.toLocaleString('vi-VN')+"đ";
+ },15);
+ for(let i=0;i<80;i++){
+   setTimeout(()=>{
+      let h=document.createElement('div');
+      h.className='heart';
+      h.textContent=Math.random()>0.5?'💖':'🎉';
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(18+Math.random()*20)+'px';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),5000);
+   },i*40);
+ }
+}
+</script>
+</body>
+</html>
