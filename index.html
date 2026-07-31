@@ -2,130 +2,291 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Happy Birthday Huỳnh Như</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 Happy Birthday Huỳnh Như 🎂</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6ea,#fff0f7);overflow:hidden}
-.container{display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px}
-.card{max-width:700px;background:#fff;border-radius:24px;padding:30px;text-align:center;box-shadow:0 10px 35px rgba(0,0,0,.15)}
-h1{color:#ff4f93;margin:0}
-h2{color:#ff77aa}
-p{font-size:18px;line-height:1.7;color:#555}
-button{background:#ff4f93;color:#fff;border:none;padding:15px 32px;border-radius:40px;font-size:20px;cursor:pointer}
-#gift{display:none;margin-top:20px}
-.money{font-size:48px;color:#e91e63;font-weight:bold}
-.heart{position:fixed;font-size:22px;animation:fly 5s linear forwards}
-@keyframes fly{from{transform:translateY(100vh)}to{transform:translateY(-10vh);opacity:0}}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6ea,#fff0f7);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.card{
+background:#fff;
+width:100%;
+max-width:700px;
+border-radius:25px;
+padding:30px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.18);
+position:relative;
+z-index:2;
+}
+
+h1{
+color:#ff4f93;
+margin-bottom:10px;
+font-size:40px;
+}
+
+h2{
+color:#ff77aa;
+margin-bottom:20px;
+}
+
+.avatar{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #ff69b4;
+box-shadow:0 0 25px pink;
+margin:20px auto;
+display:block;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 15px #ff69b4;
+}
+to{
+box-shadow:0 0 40px hotpink;
+}
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+color:#555;
+margin-top:10px;
+}
+
+button{
+margin-top:20px;
+background:#ff4f93;
+color:#fff;
+border:none;
+padding:15px 35px;
+font-size:22px;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+animation:pulse 1.3s infinite;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+#gift{
+display:none;
+margin-top:25px;
+}
+
+.money{
+font-size:50px;
+font-weight:bold;
+color:#e91e63;
+margin:15px 0;
+}
+
+#qr{
+width:220px;
+border-radius:18px;
+box-shadow:0 0 20px pink;
+margin-top:15px;
+}
+
+.heart{
+position:fixed;
+animation:fly 5s linear forwards;
+z-index:999;
+}
+
+@keyframes fly{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
 </style>
 </head>
+
 <body>
-<div class="container">
+
 <div class="card">
-<h1>🎂 Happy Birthday</h1>
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
 <h2>Huỳnh Như 💖</h2>
- <img src=""avatar.JPG""
 
-style="
+<img src="avatar.JPG" class="avatar">
 
-width:180px;
+<p>
 
-height:180px;
+💝 Chúc em gái của Trân Trân tuổi mới thật nhiều niềm vui,
+luôn luôn mạnh khỏe,
+hạnh phúc,
+xinh đẹp
+và đạt được mọi điều mình mong muốn.
 
-border-radius:50%;
+</p>
 
-object-fit:cover;
+<button onclick="openGift()">
 
-border:6px solid #ff69b4;
+🎁 MỞ QUÀ
 
-box-shadow:0 0 25px pink;
-
-margin:20px auto;
-
-display:block;">
-<p>💝 Chúc em gái của Trân Trân thêm một tuổi mới thật nhiều niềm vui, luôn luôn hạnh phúc, mạnh khỏe và đạt được mọi điều mình mong muốn nhé.<br><br>
-Mong rằng mỗi ngày của em đều tràn ngập tiếng cười, luôn gặp nhiều may mắn và có thật nhiều kỷ niệm đẹp. 🎉</p>
-
-<button onclick="openGift()">🎁 MỞ QUÀ</button>
+</button>
 
 <div id="gift">
-<h2>🎂 Tui có chút tiền tặng sinh nhật nhoa 🎂🎂</h2>
-<div class="money" id="money">0đ</div>
+
+<h2>🎉 Quà Sinh Nhật 🎉</h2>
+
+<div id="money" class="money">
+
+0đ
+
+</div>
+
 <p><b>500.000đ 💝</b></p>
+
 <p>From: Trân Trân ❤️</p>
+
+<h3>📱 Quét mã để nhận quà</h3>
+
+<img src="qr.jpg" id="qr">
+
 </div>
-</div>
+
 </div>
 
 <audio id="bgm" loop>
 
-    <source src="music.mp3" type="audio/mpeg">
+<source src="music.mp3" type="audio/mpeg">
 
 </audio>
- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
- <script>
-function openGift() {
 
-  document.getElementById("gift").style.display = "block";
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-  document.getElementById("bgm").play();
+<script>
 
-  // Pháo hoa lần đầu
-  confetti({
-    particleCount: 180,
-    spread: 120,
-    origin: { y: 0.6 }
-  });
+let started=false;
 
-  // Pháo hoa liên tục
-  setInterval(() => {
-    confetti({
-      particleCount: 20,
-      spread: 120,
-      origin: {
-        x: Math.random(),
-        y: Math.random() * 0.6
-      }
-    });
-  }, 400);
+function openGift(){
 
-  // Đếm tiền
-  let v = 0;
-  let target = 500000;
+if(started) return;
 
-  let t = setInterval(() => {
-    v += 5000;
+started=true;
 
-    if (v >= target) {
-      v = target;
-      clearInterval(t);
-    }
+document.getElementById("gift").style.display="block";
 
-    document.getElementById("money").innerText =
-      v.toLocaleString("vi-VN") + "đ";
+document.getElementById("bgm").play().catch(()=>{});
 
-  }, 15);
+confetti({
 
-  // Tim bay
-  for (let i = 0; i < 80; i++) {
+particleCount:180,
 
-    setTimeout(() => {
+spread:120,
 
-      let h = document.createElement("div");
+origin:{y:0.6}
 
-      h.className = "heart";
+});
 
-      h.textContent = Math.random() > 0.5 ? "💖" : "🎉";
+setInterval(()=>{
+ confetti({
 
-      h.style.left = Math.random() * 100 + "vw";
+particleCount:18,
 
-      h.style.fontSize = (18 + Math.random() * 20) + "px";
+spread:120,
 
-      document.body.appendChild(h);
+origin:{
 
-      setTimeout(() => h.remove(), 5000);
+x:Math.random(),
 
-    }, i * 40);
-
-  }
+y:Math.random()*0.6
 
 }
+
+});
+
+},400);
+
+let value=0;
+
+const target=500000;
+
+const timer=setInterval(()=>{
+
+value+=5000;
+
+if(value>=target){
+
+value=target;
+
+clearInterval(timer);
+
+}
+
+document.getElementById("money").innerText=
+
+value.toLocaleString("vi-VN")+"đ";
+
+},15);
+
+for(let i=0;i<120;i++){
+
+setTimeout(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=Math.random()>0.5?"💖":"🎉";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(18+Math.random()*22)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},5000);
+
+},i*40);
+
+}
+ </script>
+
+</body>
+
+</html>
+ 
+ 
